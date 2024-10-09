@@ -1,7 +1,7 @@
 import multer from "multer";
 
 
-
+//Storing FILES ON DISK STORAGE LOCALLY BEFORE TRANSFERING TO CLOUDINARY CLOUD 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, "./public/temp")
