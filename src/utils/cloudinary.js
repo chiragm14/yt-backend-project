@@ -19,7 +19,8 @@ const uploadOnCloudinary = async (localFilePath)=>{
             resource_type: "auto"
         })
         //File has been uploaded successfully
-        console.log("File is uploaded on Cloudinary",response.url);
+        // console.log("File is uploaded on Cloudinary",response.url);
+        fs.unlinkSync(localFilePath)
         return response;
 
     } catch (error) {
@@ -31,22 +32,3 @@ const uploadOnCloudinary = async (localFilePath)=>{
 
 export {uploadOnCloudinary}
 
-
-
-
-
-
-
-
-
-const uploadResult = await cloudinary.uploader
-.upload(
-    'https://res.cloudinary.com/demo/image/upload/getting-started/shoes.jpg', {
-        public_id: 'shoes',
-    }
-)
-.catch((error) => {
-    console.log(error);
-});
-
-console.log(uploadResult);
